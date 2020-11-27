@@ -1,0 +1,37 @@
+{
+  "name": "proyecto_svelte",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack serve --open 'Google Chrome' --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lahincapie/proyecto_svelte.git"
+  },
+  "author": "Alejandra Hincapie <alejandra12@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lahincapie/proyecto_svelte/issues"
+  },
+  "homepage": "https://github.com/lahincapie/proyecto_svelte#readme",
+  "dependencies": {
+    "svelte": "^3.30.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "babel-loader": "^8.2.1",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "svelte-loader": "^2.13.6",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
