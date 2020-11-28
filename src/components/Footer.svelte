@@ -1,18 +1,14 @@
-<script>
-    import '../assets/css/Footer.css'
-</script>
+<style>
+  .Footer {
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: normal;
+    color: #c7c7c7;
+  }
+</style>
+
 <div class="Footer">
-    <div class="Footer-container">
-        <div class="Footer-content">
-            <ul>
-                <li>Acerca de</li>
-                <li>Contacto</li>
-            </ul>
-        </div>
-    </div>
-    <div class="Footer-copy">
-        <p>
-            <i class="far fa-copyright" /> 2020 Catstagram from A.H
-        </p>
-    </div>
+  <div class="Footer-container">
+    <div class="Footer-copy">© 2020 PUGSTAGRAM FROM PLATZI</div>
+  </div>
 </div>
