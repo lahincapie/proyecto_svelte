@@ -20,50 +20,59 @@ module.exports = {
         {
           test: /\.(svelte|html)$/,
           use: {
-            loader: 'svelte-loader',
+            loader: "svelte-loader",
             options: {
               dev,
               hydratable: true,
-              hotReload: false
-            }
-          }
-        }
-      ]
+              hotReload: false,
+            },
+          },
+        },
+        {
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader"],
+        },
+      ],
     },
     mode,
     plugins: [
       new webpack.DefinePlugin({
-        'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode)
+        "process.browser": true,
+        "process.env.NODE_ENV": JSON.stringify(mode),
       }),
     ].filter(Boolean),
-    devtool: dev && 'inline-source-map'
+    devtool: dev && "inline-source-map",
   },
 
   server: {
     entry: config.server.entry(),
     output: config.server.output(),
-    target: 'node',
+    target: "node",
     resolve: { alias, extensions, mainFields },
-    externals: Object.keys(pkg.dependencies).concat('encoding'),
+    externals: Object.keys(pkg.dependencies).concat("encoding"),
     module: {
       rules: [
         {
           test: /\.(svelte|html)$/,
           use: {
-            loader: 'svelte-loader',
+            loader: "svelte-loader",
             options: {
               dev,
               css: false,
-              generate: 'ssr'
-            }
-          }
-        }
-      ]
+              generate: "ssr",
+            },
+          },
+        },
+      ],
     },
     mode: process.env.NODE_ENV,
     performance: {
-      hints: false
-    }
+      hints: false,
+    },
+  },
+  serviceworker: {
+    entry: config.serviceworker.entry(),
+    output: config.serviceworker.output(),
+    mode: process.env.NODE_ENV
   },
 };
